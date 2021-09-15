@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class='card'>
+    <h5 class="card-header">Please select then submit the seats in csv format.</h5>
+    <div class="card-body">        
+        <form action="" method="POST" class="ui form" enctype="multipart/form-data">
+            <div class="mb-3">
+            {% csrf_token %}
+            <div class='card-text' style="color:red">
+                Note: ONLY ADMIN SHOULD PROCEED. This only needs to be done once.
+                <p style="line-height:10px;margin:0px;"><br></p>
+                CHECK : Ensure the primary key is in the 2nd column
+            </div>
+            <p style="line-height:20px;margin:0px;"><br></p>
+            {{form}}
+            <br><br>
+            <button type="submit" class="btn btn-primary">Confirm seats</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Search Results</h1>
+</br>
+<ul>
+  {% for mp in object_list %}
+  <div class="card text-dark bg-light mb-3" style="width: 18rem;">
+    <div class="card-header">{{ mp.name }}</div>
+    <div class="card-body">
+      <h5 class="card-title">{{ mp.state }}</h5>
+      {% if mp.get_url %}
+        <img src="{{ mp.image.url }}" width="240"/>
+      {% else %}
+        <img src="" alt="" />
+      {% endif %}
+      <p class="card-text">{{ mp.state }}</p>
+    </div>
+  </div>
+</br>
+  {% endfor %}
+</ul>
+{% endblock %}
+

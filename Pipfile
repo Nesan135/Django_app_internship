@@ -1,0 +1,13 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+django = "~=3.1.0"
+twint = {git = "https://github.com/twintproject/twint.git"}
+
+[requires]
+python_version = "3.7"

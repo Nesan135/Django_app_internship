@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h3>Twitter scraper</h3>
+  <form action="{% url 'external_results' %}" method="post">
+  {% csrf_token %}
+  <div class="mb-3">
+    <input name="topic" type="text" class="form-control" aria-describedby="nameHelp" placeholder="Please enter a topic">
+  </div>
+<div class="mb-3">
+  <input name="total" type="text" class="form-control" aria-describedby="nameHelp" placeholder="Please enter the number of Tweets to process">
+</div>
+<div class="mb-3">
+  <input name="start_date" type="text" class="form-control" aria-describedby="nameHelp" placeholder="Please enter the date to start search e.g. 2021-08-31">
+</div>
+<div class="mb-3">
+  <input name="end_date" type="text" class="form-control" aria-describedby="nameHelp" placeholder="Please enter the date to end search e.g. 2021-09-30">
+</div>
+<div class="mb-3">
+  <input name="handle" type="text" class="form-control" aria-describedby="nameHelp" placeholder="Please enter the Twitter handle of mp without @ e.g. Syedsaddiq">
+</div><p style="line-height:20px;margin:0px;"><br></p>
+  <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <p style="line-height:2px;margin:0px;"><br></p>
+
+<h3>Hansard keyword extraction</h3>
+<form action="{% url 'external_results_test' %}" method="post" enctype="multipart/form-data">
+{% csrf_token %}
+<input type='file' name='myfile' />
+<p style="line-height:20px;margin:0px;"><br></p>
+<button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<p style="line-height:2px;margin:0px;"><br></p>
+
+<h3>Search seats</h3>
+<div class='card-text' style="color:red">
+  Note: No data in seats. Please upload a csv with data to Upload CSV data to populate the database.
+</div>
+<form action="{% url 'search_results' %}" method="get">
+{% csrf_token %}
+</br>
+  <div class="mb-3">
+    <input name="q" type="text" class="form-control" aria-describedby="nameHelp" placeholder="Please enter a constituency">
+  </div>
+</br>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</br><br>
+{% endblock %}
+

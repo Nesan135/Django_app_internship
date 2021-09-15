@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Results</title>	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">	</script>	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+        table {
+            border-collapse: collapse;
+            font: 12px sans-serif;
+            border: 2px solid rgb(12, 12, 12);
+            text-align: center;
+            vertical-align: middle;
+            background-color: rgb(15, 15, 15);
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 2%;
+        }
+        tbody tr:nth-child(odd) {
+  background-color: rgb(241, 179, 6);color: rgb(20, 19, 19);
+}
+
+        tbody tr:nth-child(even) {background-color: rgb(80, 9, 245);color: rgb(250, 242, 242);}
+        td {
+            
+            font-weight: bold;
+            padding: 15px;
+        }
+        tbody th {
+  background-color: rgb(8, 8, 8);
+  color: #fff;
+  text-align: left;
+  padding:12px;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+    <p style="line-height:20px;margin:0px;"><br></p>
+    {{loaded_data | safe}}
+    </div>
+</body>
+</html>
